@@ -1,6 +1,5 @@
 package DAO;
 
-import DAO.EmployeeDAO;
 import Utils.HibernateSessionFactoryUtil;
 import model.Employee;
 import org.hibernate.Session;
@@ -15,7 +14,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
         try(Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession()) {
             Transaction transaction = session.beginTransaction();
             session.save(employee);
-            //transaction.commit();
+            transaction.commit();
         }
     }
 
@@ -38,7 +37,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
         try(Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession()) {
             Transaction transaction = session.beginTransaction();
             session.update(employee);
-            //transaction.commit();
+            transaction.commit();
         }
     }
 
@@ -47,7 +46,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
         try(Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession()) {
             Transaction transaction = session.beginTransaction();
             session.delete(employee);
-            //transaction.commit();
+            transaction.commit();
         }
     }
 }

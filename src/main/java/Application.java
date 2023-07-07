@@ -16,12 +16,12 @@ public class Application {
         Employee employee1 = new Employee("Petr", "Petrov", "male", 25, new City("Moscow"));
         employeeDAO.create(employee1);
 
-        System.out.println(employeeDAO.readById(4));
+        System.out.println(employeeDAO.readById(31));
 
         List<Employee> employeeList = employeeDAO.readAll();
         employeeList.forEach(System.out::println);
 
-        Employee employee2 = new Employee(9, "Sergey", "Ivanov", "male", 20, new City("N.NOVGOROD"));
+        Employee employee2 = new Employee(31, "Sergey", "Ivanov", "male", 20, new City("N.NOVGOROD"));
         employeeDAO.updateEmployee(employee2);
 
         employeeDAO.deleteEmployee(employee2);
@@ -37,6 +37,6 @@ public class Application {
         City city2 = new City("Sarov");
         cityDAO.updateCity(city2);
 
-        //cityDAO.deleteCity(city2);
+        cityDAO.deleteCity(city2);
     }
 }

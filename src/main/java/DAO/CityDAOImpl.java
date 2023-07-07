@@ -13,7 +13,7 @@ public class CityDAOImpl implements CityDAO {
         try (Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession()) {
             Transaction transaction = session.beginTransaction();
             session.save(city);
-            //transaction.commit();
+            transaction.commit();
         }
     }
 
@@ -36,7 +36,7 @@ public class CityDAOImpl implements CityDAO {
         try (Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession()) {
             Transaction transaction = session.beginTransaction();
             session.update(city);
-            //transaction.commit();
+            transaction.commit();
         }
     }
 
@@ -45,7 +45,7 @@ public class CityDAOImpl implements CityDAO {
         try (Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession()) {
             Transaction transaction = session.beginTransaction();
             session.delete(city);
-            //transaction.commit();
+            transaction.commit();
         }
     }
 }
